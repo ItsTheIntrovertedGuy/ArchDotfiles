@@ -71,7 +71,7 @@ autocmd QuickFixCmdPost [^l]* nested copen
 autocmd QuickFixCmdPost    l* nested lwindow
 autocmd VimResized * wincmd =
 map <F1> :wa<cr>:silent make -B build<cr><cr><C-w>p
-map <F2> :make -B run<cr>
+map <F2> :silent make -B run<cr><cr><C-w>p
 nmap <C-j> :cnext<cr>
 nmap <C-k> :cprevious<cr>
 
