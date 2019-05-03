@@ -1,6 +1,6 @@
 #!/bin/sh
 # Software
-redshift &
+#redshift &
 onedrive -m --syncdir /home/felix/OneDrive &
 
 # Add 4coder path
