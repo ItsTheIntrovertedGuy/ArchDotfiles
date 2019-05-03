@@ -44,7 +44,7 @@ set shiftwidth=4
 
 nnoremap <esc> :noh<return><esc>
 vmap <a-y> "+y
-inoremap <a-p> "+p
+nnoremap <a-p> "+p
 
 set cursorline
 hi cursorline cterm=none term=none
