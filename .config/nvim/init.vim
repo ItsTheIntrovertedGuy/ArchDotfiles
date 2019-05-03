@@ -6,6 +6,9 @@ Plug 'cohama/lexima.vim'		" Autoclose paranthesis
 Plug 'scrooloose/nerdtree'		" CTRL+n for some sick directory viewer
 Plug 'scrooloose/nerdcommenter'	" Easily comment stuff with \cm, toggle hidden files Shift+i
 Plug 'dpc/vim-smarttabs'	    " Tabs for indentation, spaces for allignement
+Plug 'xolox/vim-session'        " Vim Sessions
+Plug 'xolox/vim-misc'           " Used by xim-sessions for some reason
+Plug 'airblade/vim-rooter'      " Set working directory to opened one
 call plug#end()
 
 """ VISUALS
@@ -51,6 +54,27 @@ highlight CursorLine guibg=#32302f ctermbg=234
 
 
 """ INTERNAL SETTINGS
+set undodir=~/.nvim/undos/
+set undofile
+
+set exrc
+set secure
+"silent! so .vimlocal
+
+set confirm
+
+tnoremap <esc> <C-\><C-N><C-w>h
+
+" Programming settings
+"autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost [^l]* nested copen
+autocmd QuickFixCmdPost    l* nested lwindow
+autocmd VimResized * wincmd =
+map <F1> :wa<cr>:silent make -B build<cr><cr><C-w>p
+map <F2> :make -B run<cr>
+nmap <C-j> :cnext<cr>
+nmap <C-k> :cprevious<cr>
+
 " C settings
 " edit /usr/share/nvim/runtime/syntax/c.vim and add NOTE to FIXME TODO 
 " NOTE: Indent case curly bracket on same line
@@ -65,22 +89,17 @@ augroup project
 augroup END
 filetype plugin on
 
-set undodir=~/.vim/undos/
-set undofile
-
-set autochdir
-
-set confirm
-
-tnoremap <esc> <C-\><C-N><C-w>h
-
 " INPUT BINDS
 inoremap <a-y> // NOTE(Felix): 
 inoremap <a-t> // TODO(Felix): 
 
 """ PLUGIN CONFIG
+" NERDTree
 map <C-n> :NERDTreeToggle<CR>
-
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
+" vim-session
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
+let g:session_directory = '~/.nvim/sessions'
