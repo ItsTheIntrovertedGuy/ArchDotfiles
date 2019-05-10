@@ -203,18 +203,25 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+y exec swaylock-fancy -t "" 
 
 # screenshot bind
-bindsym $mod+Shift+s exec grim ~/screenshot.png
+bindsym $mod+Shift+s exec slurp | grim -g - ~/screenshot.png
 
 # no title bar
 default_border pixel 4
 default_floating_border pixel 4
 
+# MPD Bindings
+bindsym $mod+o exec mpc next
+bindsym $mod+i exec mpc prev
+bindsym $mod+p exec mpc toggle
+bindsym $mod+Shift+o exec mpc volume -10
+bindsym $mod+Shift+p exec mpc volume +10
+
 # Cmus bindings
-bindsym $mod+o exec cmus-remote --next
-bindsym $mod+i exec cmus-remote --prev
-bindsym $mod+p exec cmus-remote --pause
-bindsym $mod+Shift+o exec cmus-remote --volume -10%
-bindsym $mod+Shift+p exec cmus-remote --volume +10%
+#bindsym $mod+o exec cmus-remote --next
+#bindsym $mod+i exec cmus-remote --prev
+#bindsym $mod+p exec cmus-remote --pause
+#bindsym $mod+Shift+o exec cmus-remote --volume -10%
+#bindsym $mod+Shift+p exec cmus-remote --volume +10%
 
 # Key repeat rate
 input * repeat_delay 160
