@@ -104,3 +104,6 @@ let NERDTreeDirArrows = 1
 let g:session_autosave = 'no'
 let g:session_autoload = 'no'
 let g:session_directory = '~/.nvim/sessions'
+
+" vim-rooter
+let g:rooter_patterns = ['makefile', 'make', 'Rakefile', '.git/']
