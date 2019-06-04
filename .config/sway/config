@@ -228,8 +228,7 @@ input * repeat_delay 160
 input * repeat_rate 30
 
 # Background color
-output DP-1 background #000000 solid_color
-output DP-2 background #000000 solid_color
+output * background #000000 solid_color
 
 # Monitors
 output DP-2 pos 0 0 
