@@ -1,6 +1,5 @@
 #!/bin/sh
 # Software
-redshift &
 onedrive -m --syncdir /home/felix/OneDrive &
 mpd &
 
