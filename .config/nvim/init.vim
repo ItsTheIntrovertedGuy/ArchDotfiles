@@ -1,13 +1,12 @@
 " Plugins "
 call plug#begin('~/.nvim/plugged')
 Plug 'chriskempson/base16-vim'   " Theme
-"Plug 'morhetz/gruvbox'			" Theme
 Plug 'cohama/lexima.vim'		" Autoclose paranthesis
 Plug 'scrooloose/nerdtree'		" CTRL+n for some sick directory viewer
 Plug 'scrooloose/nerdcommenter'	" Easily comment stuff with \cm, toggle hidden files Shift+i
 Plug 'dpc/vim-smarttabs'	    " Tabs for indentation, spaces for allignement
 Plug 'xolox/vim-session'        " Vim Sessions
-Plug 'xolox/vim-misc'           " Used by xim-sessions for some reason
+Plug 'xolox/vim-misc'           " Used by vim-sessions for some reason
 Plug 'airblade/vim-rooter'      " Set working directory to opened one
 call plug#end()
 
