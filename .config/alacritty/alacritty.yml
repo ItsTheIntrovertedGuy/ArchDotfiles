@@ -95,9 +95,14 @@ font:
     #   - (Linux) monospace
     #   - (Windows) Consolas
     family: xos4 Terminus
+    #family: ypn envypn
+    #family: Dina
+    #family: Gohu GohuFont
+    #family: Tamzen
 
     # The `style` can be specified to pick a specific face.
     style: bold
+    #style: regular
 
   # Bold font face
   bold:
@@ -105,7 +110,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: xos4 Terminus
+    #family: xos4 Terminus
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -116,7 +121,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: xos4 Terminus
+    #family: xos4 Terminus
 
     # The `style` can be specified to pick a specific face.
     style: Italic
