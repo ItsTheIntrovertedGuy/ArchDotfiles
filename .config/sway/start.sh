@@ -1,6 +1,7 @@
 #!/bin/sh
 # Software
-onedrive -m --syncdir /home/felix/OneDrive &
+# onedrive -m --syncdir /home/felix/OneDrive &
+onedrive -m &
 mpd &
 
 # Add 4coder path

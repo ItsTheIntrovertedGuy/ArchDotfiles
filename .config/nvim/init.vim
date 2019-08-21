@@ -1,6 +1,6 @@
 " Plugins "
 call plug#begin('~/.nvim/plugged')
-Plug 'chriskempson/base16-vim'   " Theme
+Plug 'chriskempson/base16-vim'  " Theme
 Plug 'cohama/lexima.vim'		" Autoclose paranthesis
 Plug 'scrooloose/nerdtree'		" CTRL+n for some sick directory viewer
 Plug 'scrooloose/nerdcommenter'	" Easily comment stuff with \cm, toggle hidden files Shift+i
@@ -12,8 +12,6 @@ call plug#end()
 
 """ VISUALS
 syntax on
-"colorscheme gruvbox
-"set background=dark
 colorscheme base16-grayscale-dark
 highlight clear LineNr
 highlight clear CursorLineNr
@@ -21,6 +19,7 @@ highlight LineNr ctermfg=blue
 highlight CursorLineNr ctermfg=blue
 highlight clear StatusLine
 highlight clear VertSplit
+highlight cTodo ctermfg=0 ctermbg=10
 set numberwidth=3
 
 set number
@@ -30,16 +29,11 @@ set guicursor=
 
 set nowrap
 set scrolloff=5
-"set title
 set matchtime=2
 
 set backspace=2
 set tabstop=4
 set shiftwidth=4
-"set softtabstop=2
-"set noexpandtab
-"set smartindent
-"set smarttab
 
 nnoremap <esc> :noh<return><esc>
 vmap <a-y> "+y
@@ -58,7 +52,6 @@ set undofile
 
 set exrc
 set secure
-"silent! so .vimlocal
 
 set confirm
 
@@ -70,8 +63,8 @@ autocmd QuickFixCmdPost [^l]* nested copen
 autocmd QuickFixCmdPost [^l]* nested wincmd p
 autocmd QuickFixCmdPost    l* nested lwindow
 autocmd VimResized * wincmd =
-map <F1> :wa<cr>:silent make -B build<cr>
-map <F2> :silent make -B run<cr>
+map <F1> :wa<cr>:silent make! -B build<cr>
+map <F2> :silent make! -B run<cr>
 nmap <C-j> :cnext<cr>
 nmap <C-k> :cprevious<cr>
 
@@ -92,6 +85,7 @@ filetype plugin on
 " INPUT BINDS
 inoremap <a-y> // NOTE(Felix): 
 inoremap <a-t> // TODO(Felix): 
+map <Space> <Leader>
 
 """ PLUGIN CONFIG
 " NERDTree
