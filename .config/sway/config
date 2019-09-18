@@ -249,6 +249,11 @@ input 6899:1:Kingsis_Peripherals_ZOWIE_Gaming_mouse {
 	pointer_accel -1 
 }
 
+# Configure wacom tablet
+input 1386:221:Wacom_Bamboo_Connect_Pen {
+	map_to_output DP-2
+}
+
 # Window border colors
 # class					  border	backgr.	text	indicator child_border
 client.focused			  #747474	#285577	#ffffff	#747474	  #7c7c7c
@@ -273,6 +278,5 @@ bar {
 }
 
 include /etc/sway/config.d/*
-
 
 exec redshift
