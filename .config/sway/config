@@ -235,7 +235,8 @@ output DP-2 pos 0 0
 output DP-1 pos 2560 0
 output DP-2 mode 2560x1440@143.856003Hz
 output DP-1 mode 3840x2160@59.951Hz
-#output DP-1 scale 2
+output DP-1 scale 1
+output DP-1 scale 1
 
 # Keyboard layouts
 input 1130:118:HID_046a:0076 {
@@ -257,7 +258,10 @@ input 1386:221:Wacom_Bamboo_Connect_Pen {
 # Window border colors
 # class					  border	backgr.	text	indicator child_border
 client.focused			  #747474	#285577	#ffffff	#747474	  #7c7c7c
-client.focused_inactive	  #525252	#285577	#ffffff	#525252	  #525252
+client.focused_inactive	  #333333	#285577	#ffffff	#333333	  #333333
+client.unfocused          #333333	#222222 #ffffff #333333   #333333
+client.urgent             #2f343a	#900000 #ffffff #900000   #900000
+client.placeholder        #000000	#0c0c0c #ffffff #000000   #0c0c0c
 #
 # Status Bar:
 #
