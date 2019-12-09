@@ -70,7 +70,7 @@ scrolling:
   # to allow mouse scrolling for applications like `man`.
   #
   # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
+  #faux_multiplier: 3
 
   # Scroll to the bottom when new text is written to the terminal.
   auto_scroll: false
@@ -95,14 +95,11 @@ font:
     #   - (Linux) monospace
     #   - (Windows) Consolas
     family: xos4 Terminus
-    #family: ypn envypn
-    #family: Dina
-    #family: Gohu GohuFont
-    #family: Tamzen
+    #family: Inconsolata
 
     # The `style` can be specified to pick a specific face.
+    #style: Regular
     style: bold
-    #style: regular
 
   # Bold font face
   bold:
@@ -128,6 +125,7 @@ font:
 
   # Point size
   size: 11.0
+  #size: 14
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
