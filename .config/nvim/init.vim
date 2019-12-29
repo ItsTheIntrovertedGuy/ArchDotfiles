@@ -19,7 +19,7 @@ highlight LineNr ctermfg=blue
 highlight CursorLineNr ctermfg=blue
 highlight clear StatusLine
 highlight clear VertSplit
-highlight cTodo ctermfg=0 ctermbg=10
+highlight cTodo ctermfg=0 ctermbg=10 guibg=gray17
 set numberwidth=3
 
 set number
