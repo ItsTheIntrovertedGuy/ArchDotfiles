@@ -2,12 +2,13 @@
 call plug#begin('~/.nvim/plugged')
 Plug 'chriskempson/base16-vim'  " Theme
 Plug 'cohama/lexima.vim'		" Autoclose paranthesis
-Plug 'scrooloose/nerdtree'		" CTRL+n for some sick directory viewer
-Plug 'scrooloose/nerdcommenter'	" Easily comment stuff with \cm, toggle hidden files Shift+i
 Plug 'dpc/vim-smarttabs'	    " Tabs for indentation, spaces for allignement
 Plug 'xolox/vim-session'        " Vim Sessions
 Plug 'xolox/vim-misc'           " Used by vim-sessions for some reason
 Plug 'airblade/vim-rooter'      " Set working directory to opened one
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 """ VISUALS
@@ -65,6 +66,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 autocmd VimResized * wincmd =
 map <F1> :wa<cr>:silent make! -B build<cr>
 map <F2> :silent make! -B run<cr>
+map <F3> :!ctags -R
 nmap <C-j> :cnext<cr>
 nmap <C-k> :cprevious<cr>
 
@@ -88,10 +90,10 @@ inoremap <a-t> // TODO(Felix):
 map <Space> <Leader>
 
 """ PLUGIN CONFIG
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+" FZF
+nnoremap <C-p> :Files<cr>
+nnoremap <C-g> :Rg<cr>
+" Also: Jump back and forth by using C-O, C-I
 
 " vim-session
 let g:session_autosave = 'no'
