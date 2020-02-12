@@ -64,6 +64,7 @@ autocmd QuickFixCmdPost [^l]* nested copen
 autocmd QuickFixCmdPost [^l]* nested wincmd p
 autocmd QuickFixCmdPost    l* nested lwindow
 autocmd VimResized * wincmd =
+autocmd VimLeavePre * cclose | lclose
 map <F1> :wa<cr>:silent make! -B build<cr>
 map <F2> :silent make! -B run<cr>
 map <F3> :!ctags -R
@@ -96,9 +97,12 @@ nnoremap <C-g> :Rg<cr>
 " Also: Jump back and forth by using C-O, C-I
 
 " vim-session
-let g:session_autosave = 'no'
-let g:session_autoload = 'no'
+let g:session_autosave = 'yes'
+let g:session_autosave_silent = 1
+let g:session_default_to_last = 1
+let g:session_autoload = 'yes'
 let g:session_directory = '~/.nvim/sessions'
+set sessionoptions-=blank
 
 " vim-rooter
 let g:rooter_patterns = ['makefile', 'make', 'Rakefile', '.git/']
