@@ -1,1 +1,6 @@
 MOZ_ENABLE_WAYLAND=1
+TERMINAL=alacritty
+EDITOR=nvim
+READER=zathura
+BROWSER=firefox
+NN_USE_EDITOR=1

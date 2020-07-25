@@ -1,7 +1,7 @@
 #!/bin/sh
 # Software
 # onedrive -m --syncdir /home/felix/OneDrive &
-onedrive -m &
+onedrive --check-for-nosync -m &
 mpd &
 
 # Add 4coder path
