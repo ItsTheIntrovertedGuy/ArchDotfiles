@@ -67,7 +67,6 @@ autocmd VimResized * wincmd =
 autocmd VimLeavePre * cclose | lclose
 map <F1> :wa<cr>:silent make! -B build<cr>
 map <F2> :silent make! -B run<cr>
-map <F3> :!ctags -R
 nmap <C-j> :cnext<cr>
 nmap <C-k> :cprevious<cr>
 

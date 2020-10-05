@@ -216,17 +216,6 @@ bindsym $mod+p exec mpc toggle
 bindsym $mod+Shift+o exec mpc volume -10
 bindsym $mod+Shift+p exec mpc volume +10
 
-# Cmus bindings
-#bindsym $mod+o exec cmus-remote --next
-#bindsym $mod+i exec cmus-remote --prev
-#bindsym $mod+p exec cmus-remote --pause
-#bindsym $mod+Shift+o exec cmus-remote --volume -10%
-#bindsym $mod+Shift+p exec cmus-remote --volume +10%
-
-# Key repeat rate
-input * repeat_delay 160
-input * repeat_rate 30
-
 # Background color
 output * background #000000 solid_color
 
@@ -238,15 +227,16 @@ output DP-1 mode 3840x2160@59.951Hz
 output DP-1 scale 1
 output DP-1 scale 1
 
-# Keyboard layouts
-input 1130:118:HID_046a:0076 {
+# Input config
+input * {
+	# Keyboard options
+	repeat_delay 160
+	repeat_rate 30
 	xkb_layout us,de
 	xkb_variant ,nodeadkeys
 	xkb_options grp:rctrl_rshift_toggle
-}
 
-# Disable mouse accel
-input 6899:1:Kingsis_Peripherals_ZOWIE_Gaming_mouse {
+	# Disable mouse accel
 	pointer_accel -1 
 }
 
