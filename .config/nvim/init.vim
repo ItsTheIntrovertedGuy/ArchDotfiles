@@ -6,9 +6,6 @@ Plug 'dpc/vim-smarttabs'	    " Tabs for indentation, spaces for allignement
 Plug 'xolox/vim-session'        " Vim Sessions
 Plug 'xolox/vim-misc'           " Used by vim-sessions for some reason
 Plug 'airblade/vim-rooter'      " Set working directory to opened one
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 call plug#end()
 
 """ VISUALS
@@ -53,8 +50,10 @@ set undofile
 
 set exrc
 set secure
-
 set confirm
+
+set ignorecase
+set smartcase " Search is case insensitive if all letters are lower case
 
 tnoremap <esc> <C-\><C-N><C-w>h
 
@@ -89,12 +88,33 @@ inoremap <a-y> // NOTE(Felix):
 inoremap <a-t> // TODO(Felix): 
 map <Space> <Leader>
 
-""" PLUGIN CONFIG
-" FZF
-nnoremap <C-p> :Files<cr>
-nnoremap <C-g> :Rg<cr>
-" Also: Jump back and forth by using C-O, C-I
+" Own function, using scpl, open up a window containing info about the project
+nnoremap <silent> <C-l> <esc>:call SimpleCProgrammingList()<cr>
+function SimpleCProgrammingList()
+	let bnr = bufwinnr('SimpleCProgrammingListBuffer')
+	if bnr > 0
+		silent wincmd p
+		silent bdelete SimpleCProgrammingListBuffer
+	else
+		silent badd SimpleCProgrammingListBuffer
+		silent vs
+		silent wincmd H
+		silent vertical resize 40
+		silent b SimpleCProgrammingListBuffer
+		silent set buftype=nofile
+		silent r ! scpl *.c *.h
+		silent 0d_
+		silent setlocal nonumber
 
+		" Highlighting
+		syn region SimpleCProgrammingListSyntaxFunctionParams start=+(+ end=+)+
+		syn keyword SimpleCProgrammingListSyntaxSeperator structs enums defines globals functions
+		hi SimpleCProgrammingListSyntaxFunctionParams ctermfg=8
+		hi SimpleCProgrammingListSyntaxSeperator ctermfg=5
+	endif
+endfunction
+
+""" PLUGIN CONFIG
 " vim-session
 let g:session_autosave = 'yes'
 let g:session_autosave_silent = 1
