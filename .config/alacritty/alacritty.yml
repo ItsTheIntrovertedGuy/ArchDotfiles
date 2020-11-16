@@ -82,9 +82,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    #family: xos4 Terminus
-    #family: Terminus (TTF)
     family: Terminus
+    #family: scientifica
     #family: Inconsolata
     #family: Hack
 
@@ -115,7 +114,7 @@ font:
     style: Italic
 
   # Point size
-  size: 10.5
+  size: 11
   #size: 14
 
   # Offset is the extra space around each character. `offset.y` can be thought of
