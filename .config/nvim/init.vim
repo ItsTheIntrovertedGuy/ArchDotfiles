@@ -105,7 +105,7 @@ function SimpleCProgrammingList()
 		silent r ! scpl *.c *.h
 		silent 0d_
 		silent setlocal nonumber
-		silent set noma
+		silent setlocal noma
 
 		" Highlighting
 		syn region SimpleCProgrammingListSyntaxFunctionParams start=+(+ end=+)+
