@@ -93,7 +93,6 @@ nnoremap <silent> <C-l> <esc>:call SimpleCProgrammingList()<cr>
 function SimpleCProgrammingList()
 	let bnr = bufwinnr('SimpleCProgrammingListBuffer')
 	if bnr > 0
-		silent wincmd p
 		silent bdelete SimpleCProgrammingListBuffer
 	else
 		silent badd SimpleCProgrammingListBuffer
@@ -112,6 +111,7 @@ function SimpleCProgrammingList()
 		syn keyword SimpleCProgrammingListSyntaxSeperator structs enums defines globals functions
 		hi SimpleCProgrammingListSyntaxFunctionParams ctermfg=8
 		hi SimpleCProgrammingListSyntaxSeperator ctermfg=5
+		silent wincmd p
 	endif
 endfunction
 
